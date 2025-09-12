@@ -18,11 +18,7 @@ const app = express();
 
 // CORS Configuration - FIX FOR YOUR ERROR
 const corsOptions = {
-  origin: [
-    'http://localhost:3000',  // React development server
-    'https://orangepetal.in/',  // Alternative React port
-    'http://127.0.0.1:3000',  // Alternative localhost format
-  ],
+  origin:'https://orangepetal.in',
   credentials: true,
   optionsSuccessStatus: 200, // For legacy browser support
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
