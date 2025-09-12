@@ -20,7 +20,7 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:3000',  // React development server
-    'http://localhost:3001',  // Alternative React port
+    'https://orangepetal.in/',  // Alternative React port
     'http://127.0.0.1:3000',  // Alternative localhost format
   ],
   credentials: true,
@@ -116,7 +116,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📱 API available at http://localhost:${PORT}`);
   console.log(`🏥 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`🌐 CORS enabled for: http://localhost:3000`);
+  console.log(`🌐 CORS enabled for: https://orangepetal.in/`);
 });
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
