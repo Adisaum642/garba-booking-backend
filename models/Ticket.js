@@ -1,97 +1,95 @@
-// models/Ticket.js
 const mongoose = require('mongoose');
 
 const ticketSchema = new mongoose.Schema({
   ticketId: {
     type: String,
+    required: true,
     unique: true,
-    required: true
+    index: true
   },
   attendeeName: {
     type: String,
-    required: true,
-    trim: true
-  },
-  email: {
-    type: String,
-    required: true,
-    lowercase: true,
-    trim: true
-  },
-  phone: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  eventDate: {
-    type: Date,
     required: true
+  },
+  attendeeEmail: {
+    type: String,
+    required: true
+  },
+  attendeePhone: {
+    type: String,
+    default: ''
   },
   ticketType: {
     type: String,
-    enum: ['regular', 'vip', 'couple'],
-    required: true
+    required: true,
+    enum: ['regular', 'vip', 'couple']
   },
-  quantity: {
-    type: Number,
-    default: 1,
-    min: 1,
-    max: 10
-  },
-  totalAmount: {
-    type: Number,
-    required: true
-  },
-  qrCode: {
+  eventDate: {
     type: String,
     required: true
   },
-  qrData: {
-    type: Object,
-    required: true
+  eventName: {
+    type: String,
+    default: 'Garba Night 2025'
   },
-  isUsed: {
-    type: Boolean,
-    default: false
+  venue: {
+    type: String,
+    default: 'Event Hall, Gujarat'
   },
-  usedAt: {
-    type: Date
+  time: {
+    type: String,
+    default: '6:00 PM - 11:00 PM'
   },
   paymentId: {
     type: String,
     required: true
   },
-  orderId: {
-    type: String,
-    required: true
-  },
-  paymentStatus: {
-    type: String,
-    enum: ['pending', 'completed', 'failed', 'refunded'],
-    default: 'completed'
-  },
-  bookingDate: {
-    type: Date,
-    default: Date.now
-  },
   status: {
     type: String,
-    enum: ['active', 'cancelled', 'expired'],
-    default: 'active'
+    enum: ['confirmed', 'cancelled', 'used'],
+    default: 'confirmed'
   },
-  checkedInAt: {
-    type: Date
+  individualPrice: {
+    type: Number,
+    default: 500
   },
-  checkedInBy: {
-    type: String
+  ticketNumber: {
+    type: Number,
+    default: 1
+  },
+  totalTickets: {
+    type: Number,
+    default: 1
+  },
+  qrCode: {
+    type: String,
+    default: ''
+  },
+  scannedAt: {
+    type: Date,
+    default: null
+  },
+  scannedBy: {
+    type: String,
+    default: null
+  },
+  entryAllowed: {
+    type: Boolean,
+    default: false
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 }, {
   timestamps: true
 });
 
-// Index for faster queries
+// Indexes for faster queries
 ticketSchema.index({ ticketId: 1 });
-ticketSchema.index({ email: 1 });
+ticketSchema.index({ status: 1 });
+ticketSchema.index({ scannedAt: 1 });
+ticketSchema.index({ attendeeEmail: 1 });
 ticketSchema.index({ paymentId: 1 });
 
 module.exports = mongoose.model('Ticket', ticketSchema);

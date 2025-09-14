@@ -96,6 +96,16 @@ app.use((error, req, res, next) => {
   });
 });
 
+
+// Load scanner routes
+try {
+  const scannerRoutes = require('./routes/scanner');
+  app.use('/api', scannerRoutes);
+  console.log('✅ Scanner routes loaded');
+} catch (error) {
+  console.log('⚠️ Scanner routes not found, skipping...');
+}
+
 // 404 handler
 app.use('/*catchAll', (req, res) => {
   res.status(404).json({
