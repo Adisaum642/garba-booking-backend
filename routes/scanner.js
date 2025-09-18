@@ -161,7 +161,7 @@ router.post('/validate-qr', async (req, res) => {
       },
       entryDetails: {
         eventName: 'Garba Night 2025',
-        venue: 'Event Hall, Gujarat',
+        venue: 'PARK PLAZA Hotel,Near Metro Zirakpur Chandigarh Highway zirakpur-140603',
         entryTime: ticket.scannedAt
       }
     });
@@ -278,8 +278,8 @@ router.post('/create-specific-ticket', async (req, res) => {
         eventDate: '2025-10-15',
         paymentId: 'test_payment_003',
         eventName: 'Garba Night 2025',
-        venue: 'Event Hall, Gujarat',
-        time: '6:00 PM - 11:00 PM',
+        venue: 'PARK PLAZA Hotel,Near Metro Zirakpur Chandigarh Highway zirakpur-140603',
+        time: '7:00 PM - 11:00 PM',
         status: 'confirmed',
         individualPrice: 500
       };

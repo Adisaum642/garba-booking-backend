@@ -22,7 +22,7 @@ const ticketSchema = new mongoose.Schema({
   ticketType: {
     type: String,
     required: true,
-    enum: ['regular', 'vip', 'couple']
+    enum: ['regular', 'family', 'couple']
   },
   eventDate: {
     type: String,
@@ -34,11 +34,11 @@ const ticketSchema = new mongoose.Schema({
   },
   venue: {
     type: String,
-    default: 'Event Hall, Gujarat'
+    default: 'PARK PLAZA Hotel,Near Metro Zirakpur Chandigarh Highway zirakpur-140603'
   },
   time: {
     type: String,
-    default: '6:00 PM - 11:00 PM'
+    default: '7:00 PM - 11:00 PM'
   },
   paymentId: {
     type: String,

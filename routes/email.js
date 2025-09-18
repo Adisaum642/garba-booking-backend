@@ -108,8 +108,11 @@ router.post('/send-tickets-email', async (req, res) => {
                 <h3 style="color: #667eea; margin-top: 0;">📅 Event Details</h3>
                 <p><strong>Event:</strong> ${eventName}</p>
                 <p><strong>Date:</strong> September 27, 2025</p>
-                <p><strong>Time:</strong> 6:00 PM - 11:00 PM</p>
-                <p><strong>Venue:</strong> Event Hall, Gujarat</p>
+                <p><strong>Time:</strong> 7:00 PM - 11:00 PM</p>
+                <p><strong>Venue:</strong> PARK PLAZA Hotel,Near
+Metro Zirakpur
+Chandigarh Highway
+zirakpur-140603</p>
                 <p><strong>Total Amount Paid:</strong> ₹${totalAmount}</p>
                 <p><strong>Payment ID:</strong> ${paymentId}</p>
               </div>
@@ -193,8 +196,11 @@ Congratulations! Your booking for Garba Night 2025 has been confirmed.
 Event Details:
 - Event: ${eventName}
 - Date: September 27, 2025
-- Time: 6:00 PM - 11:00 PM
-- Venue: Event Hall, Gujarat
+- Time: 7:00 PM - 11:00 PM
+- Venue: PARK PLAZA Hotel,Near
+Metro Zirakpur
+Chandigarh Highway
+zirakpur-140603
 - Total Amount: ₹${totalAmount}
 - Payment ID: ${paymentId}
 

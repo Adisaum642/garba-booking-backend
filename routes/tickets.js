@@ -47,8 +47,8 @@ router.post('/generate-tickets', async (req, res) => {
         eventDate: eventDate || '2025-10-15',
         paymentId: paymentId,
         eventName: eventName || 'Garba Night 2025',
-        venue: 'Event Hall, Gujarat',
-        time: '6:00 PM - 11:00 PM',
+        venue: 'PARK PLAZA Hotel,Near Metro Zirakpur Chandigarh Highway zirakpur-140603',
+        time: '7:00 PM - 11:00 PM',
         status: 'confirmed', // Fixed: was 'Confirmed', should be 'confirmed'
         individualPrice: totalAmount ? Math.round(totalAmount / quantity) : 500,
         ticketNumber: i + 1,
